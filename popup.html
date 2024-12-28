@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proxy Knight</title>
+  <style>
+    body {
+      width: 320px;
+      padding: 20px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .title {
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9em;
+      color: #00ffff;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+    input:focus {
+      outline: none;
+      border-color: #00ffff;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    #applyProxy {
+      background: linear-gradient(135deg, #00ffff 0%, #0088ff 100%);
+      color: #1a1a2e;
+    }
+    #applyProxy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+    }
+    #disableProxy {
+      background: linear-gradient(135deg, #ff3366 0%, #ff0066 100%);
+      color: white;
+    }
+    #disableProxy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+    }
+    #status {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.8em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Proxy Knight</h1>
+    <div class="form-group">
+      <label for="proxyHost">Proxy IP</label>
+      <input type="text" id="proxyHost" placeholder="Enter proxy IP address">
+    </div>
+    <div class="form-group">
+      <label for="proxyPort">Port</label>
+      <input type="number" id="proxyPort" placeholder="Enter port number">
+    </div>
+    <div class="button-group">
+      <button id="applyProxy">Connect</button>
+      <button id="disableProxy">Disable</button>
+    </div>
+    <div id="status">Status: Ready to connect</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
